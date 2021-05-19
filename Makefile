@@ -7,6 +7,8 @@ h help:
 install:
 	npm install
 
+upgrade:
+	npm update
 
 clean:
 	rm -rf dist/*
