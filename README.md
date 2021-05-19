@@ -10,7 +10,6 @@
 
 ## Use this project
 
-
 <div align="center">
 
 [![Use this template](https://img.shields.io/badge/Generate-Use_this_template-2ea44f?style=for-the-badge)](https://github.com/MichaelCurrin/react-ssr-quickstart/generate)
@@ -38,6 +37,25 @@ The benefit is your page will load faster for users and the search engines will 
 - Learn more about React on [Dev Resources](https://michaelcurrin.github.io/dev-resources/resources/javascript/packages/react/).
 - [React.hydrate](https://reactjs.org/docs/react-dom.html#hydrate) in the docs.
 - [Hydration and Server-side Rendering](https://blog.somewhatabstract.com/2020/03/16/hydration-and-server-side-rendering/) blog post series around React.
+
+
+## Documentation
+
+### Installation
+
+```sh
+$ npm install
+```
+
+### Usage
+
+```sh
+$ npm start
+```
+
+Then open the browser at:
+
+- http://localhost:3000
 
 
 ## License
