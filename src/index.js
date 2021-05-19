@@ -5,8 +5,7 @@ import ReactDOMServer from "react-dom/server";
 import App from "./App.jsx";
 
 const app = express();
-
-app.use("/static", express.static(path.resolve(__dirname, "public")));
+const PORT = 3000;
 
 app.get("/", (_req, res) => {
   const name = "World";
@@ -14,21 +13,23 @@ app.get("/", (_req, res) => {
   const component = ReactDOMServer.renderToString(<App name={name} />);
 
   const html = `
-  <!DOCTYPE html>
-    <html>
+    <!DOCTYPE html>
+    <html lang="en">
     <head>
       <script>window.__INITIAL__DATA__ = ${JSON.stringify({ name })}</script>
     </head>
+
     <body>
+      <div id="root">${component}</div>
 
-    <div id="root">${component}</div>
-
-    <script src="/static/home.js"></script>
-  </body>
+      <script src="/static/home.js"></script>
+    </body>
   </html>
   `;
 
   res.send(html);
 });
 
-app.listen(3000);
+app.use("/static", express.static(path.resolve(__dirname, "public")));
+
+app.listen(PORT);
