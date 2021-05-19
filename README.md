@@ -1,4 +1,4 @@
-# React SSR Quickstart
+# React SSR Quickstart ⚛️ 📦
 > Starter template for server-side and client-side rendering of a React app
 
 [![GitHub tag](https://img.shields.io/github/tag/MichaelCurrin/react-ssr-quickstart?include_prereleases=&sort=semver)](https://github.com/MichaelCurrin/react-ssr-quickstart/releases/)
