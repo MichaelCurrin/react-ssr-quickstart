@@ -5,6 +5,7 @@ import ReactDOMServer from "react-dom/server";
 import App from "./App.jsx";
 
 const app = express();
+
 const PORT = 3000;
 
 function page(params) {
@@ -24,7 +25,7 @@ function page(params) {
     <body>
       <div id="root">${component}</div>
 
-      <script src="/static/client.js"></script>
+      <script src="/static/main.js"></script>
     </body>
   </html>
   `;
