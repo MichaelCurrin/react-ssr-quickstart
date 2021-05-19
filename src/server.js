@@ -9,14 +9,21 @@ const app = express();
 const PORT = 3000;
 
 function page(params) {
-  const { name } = params;
+  const { username, title, description } = params;
 
-  const component = ReactDOMServer.renderToString(<App name={name} />);
+  const component = ReactDOMServer.renderToString(<App username={username} title={title} description={description} />);
 
   return `
     <!DOCTYPE html>
     <html lang="en">
     <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+      <title>${title}</title>
+      <meta name="description" content="${description}">
+
       <style>
         body {
           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -39,7 +46,7 @@ function page(params) {
       </style>
 
       <script>
-        window.__INITIAL__DATA__ = ${JSON.stringify({ name })}
+        window.__INITIAL__DATA__ = ${JSON.stringify({ username, title, description })}
       </script>
     </head>
 
@@ -53,8 +60,13 @@ function page(params) {
 }
 
 app.get("/", (_req, res) => {
-  const name = "World";
-  const html = page({ name })
+  const params = {
+    username: 'developer',
+    title: 'React SSR Quickstart',
+    description: 'Starter template for server-side and client-side rendering of a React app',
+  }
+
+  const html = page(params)
   res.send(html);
 });
 
