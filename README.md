@@ -8,6 +8,13 @@
 [![Package - react](https://img.shields.io/github/package-json/dependency-version/MichaelCurrin/react-ssr-quickstart/react?logo=react&logoColor=white)](https://www.npmjs.com/package/react)
 
 
+## Preview
+
+<div align="center">
+    <img src="/sample.png" alt="Sample screenshot" title="Sample screenshot" width="300" />
+</div>
+
+
 ## Use this project
 
 <div align="center">
