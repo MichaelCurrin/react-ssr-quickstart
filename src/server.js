@@ -11,7 +11,9 @@ const PORT = 3000;
 function page(params) {
   const { username, title, description } = params;
 
-  const component = ReactDOMServer.renderToString(<App username={username} title={title} description={description} />);
+  const component = ReactDOMServer.renderToString(
+    <App username={username} title={title} description={description} />
+  );
 
   return `
     <!DOCTYPE html>
@@ -46,7 +48,11 @@ function page(params) {
       </style>
 
       <script>
-        window.__INITIAL__DATA__ = ${JSON.stringify({ username, title, description })}
+        window.__INITIAL__DATA__ = ${JSON.stringify({
+          username,
+          title,
+          description,
+        })}
       </script>
     </head>
 
@@ -61,12 +67,13 @@ function page(params) {
 
 app.get("/", (_req, res) => {
   const params = {
-    username: 'developer',
-    title: 'React SSR Quickstart',
-    description: 'Starter template for server-side and client-side rendering of a React app',
-  }
+    username: "developer",
+    title: "React SSR Quickstart",
+    description:
+      "Starter template for server-side and client-side rendering of a React app",
+  };
 
-  const html = page(params)
+  const html = page(params);
   res.send(html);
 });
 
