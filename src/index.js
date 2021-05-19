@@ -7,7 +7,9 @@ import App from "./App.jsx";
 const app = express();
 const PORT = 3000;
 
-function home(name) {
+function page(params) {
+  const { name } = params;
+
   const component = ReactDOMServer.renderToString(<App name={name} />);
 
   return `
@@ -20,9 +22,7 @@ function home(name) {
     </head>
 
     <body>
-      <div id="root">
-        ${component}
-      </div>
+      <div id="root">${component}</div>
 
       <script src="/static/home.js"></script>
     </body>
@@ -32,7 +32,7 @@ function home(name) {
 
 app.get("/", (_req, res) => {
   const name = "World";
-  const html = home(name)
+  const html = page({ name })
   res.send(html);
 });
 
