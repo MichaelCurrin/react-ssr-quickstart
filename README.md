@@ -6,6 +6,7 @@
 
 [![Made with Node.js](https://img.shields.io/badge/Node.js->=12-blue?logo=node.js&logoColor=white)](https://nodejs.org)
 [![Package - react](https://img.shields.io/github/package-json/dependency-version/MichaelCurrin/react-ssr-quickstart/react?logo=react&logoColor=white)](https://www.npmjs.com/package/react)
+[![Package - express](https://img.shields.io/github/package-json/dependency-version/MichaelCurrin/react-ssr-quickstart/dev/express)](https://www.npmjs.com/package/express)
 
 
 ## Preview
