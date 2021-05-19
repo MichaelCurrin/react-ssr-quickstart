@@ -2,7 +2,7 @@ const nodeExternals = require("webpack-node-externals");
 const path = require('path')
 
 const js = {
-    test: /\.js/,
+    test: /\.jsx?/,
     exclude: /node_modules/,
     use: {
         loader: "babel-loader",
