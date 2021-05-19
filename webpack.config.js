@@ -35,7 +35,7 @@ const clientConfig = {
   mode: "development",
   target: "web",
   entry: {
-    "client.js": path.resolve(__dirname, "src/client.jsx"),
+    "main.js": path.resolve(__dirname, "src/client.jsx"),
   },
   module: {
     rules: [js],
