@@ -27,6 +27,19 @@
 
 ## About
 
+### Why add Server-Side Rendering for a React app?
+
+With this flow, you are serving static content that doesn't need JS, then add JS to make the page interactive.
+
+Why?
+
+- Better performance for initial page load (for human users).
+- SEO crawlers can now see your app without having to run JS (JS is not supported by all bots and even Google's bot has a severe limitation for how many SPA pages it can crawle while HTML pages no issue).
+- It opens you up a to a server-side part to your app, where you serve templated files or API API requests to users based on the content in a database, maybe even giving edit access.
+    - In same way you might use PHP, Flask or Express to insert user profile info or gallery images from the DB into the HTML before returning to a user, or send an receive JSON data. 
+    - But, you might want to use a tool besides React or a tool that builds on React such as Next (allows hybrid of static, server and API) or Gatsby (static).
+- You get more control over a fast-reloading dev server that doesn't need an HTML page. This doesn't make sense though when the Creact React App flow for a SPA approach which let's you use the fast-reloading dev server but also do a build command to render static assets (which is slower but creates a better experience for a deployed prod site).
+
 ### Background
 
 Based on tutorial:
