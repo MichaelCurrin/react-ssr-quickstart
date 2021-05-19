@@ -24,7 +24,7 @@ function page(params) {
     <body>
       <div id="root">${component}</div>
 
-      <script src="/static/home.js"></script>
+      <script src="/static/client.js"></script>
     </body>
   </html>
   `;
