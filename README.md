@@ -49,17 +49,33 @@ The benefit is your page will load faster for users and the search engines will 
 
 ## Documentation
 
+### Requirements
+
+- Node
+- Make
+    - A task runner than is standard on macOS and Linux but must be installed on Windows.
+    - See [Makefile](/Makefile) for commands you can run with `make COMMAND`.
+
 ### Installation
 
 ```sh
-$ npm install
+$ make install
 ```
 
 ### Usage
 
+Start the dev server:
+
 ```sh
-$ npm start
+$ make serve
 ```
+
+That will:
+
+- Run the Webpack build task and then continue to build by watching for changes.
+- Run the Node app using `nodemon` and Express.
+
+The `make` command already allows parallel jobs with the `-j` flag as set in [Makefile](/Makefile), so that avoids having to depend on another package like `concurrently`.
 
 Then open the browser at:
 

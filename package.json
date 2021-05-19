@@ -2,7 +2,9 @@
   "name": "react-ssr-quickstart",
   "version": "0.1.0",
   "scripts": {
-    "start": "webpack && concurrently 'webpack --watch' 'nodemon dist'"
+    "dev": "nodemon dist",
+    "watch": "webpack --watch",
+    "build": "webpack"
   },
   "dependencies": {
     "react": "17.0.2",
@@ -14,7 +16,6 @@
     "@babel/preset-env": "7.14.2",
     "@babel/preset-react": "7.13.13",
     "babel-loader": "8.2.2",
-    "concurrently": "6.1.0",
     "nodemon": "2.0.7",
     "webpack": "5.37.1",
     "webpack-cli": "4.7.0",
