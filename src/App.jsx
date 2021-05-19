@@ -1,5 +1,5 @@
 import React from "react";
-import Counter from "./Counter.jsx";
+import Counter from "./components/Counter.jsx";
 
 export default function App(props) {
   return (
