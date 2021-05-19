@@ -35,6 +35,7 @@ Why?
 
 - Better performance for initial page load (for human users).
 - SEO crawlers can now see your app without having to run JS (JS is not supported by all bots and even Google's bot has a severe limitation for how many SPA pages it can crawle while HTML pages no issue).
+- The docs say that the SSR approach can also be used for rendering your React app as static pages (outputting as HTML files). Gatsby is an example of a static site generator built on React that had to turn browser-rendered app content into flat static HTML files.
 - It opens you up a to a server-side part to your app, where you serve templated files or API API requests to users based on the content in a database, maybe even giving edit access.
     - In same way you might use PHP, Flask or Express to insert user profile info or gallery images from the DB into the HTML before returning to a user, or send an receive JSON data. 
     - But, you might want to use a tool besides React or a tool that builds on React such as Next (allows hybrid of static, server and API) or Gatsby (static).
