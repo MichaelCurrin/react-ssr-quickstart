@@ -17,6 +17,27 @@ function page(params) {
     <!DOCTYPE html>
     <html lang="en">
     <head>
+      <style>
+        body {
+          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+            "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+            sans-serif;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+
+          text-align: center;
+          /* Background color goes to page edge. */
+          margin: 0;
+        }
+
+        body>* {
+          /* Prevent content from going to the page edge - especially on mobile.
+              Note this should not be on body itself otherwise it gets white edges. */
+          padding-left: 15px;
+          padding-right: 15px;
+        }
+      </style>
+
       <script>
         window.__INITIAL__DATA__ = ${JSON.stringify({ name })}
       </script>
