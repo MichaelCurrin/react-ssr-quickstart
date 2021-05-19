@@ -10,12 +10,13 @@ install:
 
 clean:
 	rm -rf dist/*
-
-watch:
+build:
+	npm run build
+build-watch:
 	npm run watch
 dev:
 	npm run dev
 
-s serve: clean
-	npm run build
-	$(MAKE) -j 2 watch dev
+
+s serve: clean build
+	$(MAKE) -j 2 build-watch dev
