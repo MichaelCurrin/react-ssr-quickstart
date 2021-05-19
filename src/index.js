@@ -7,26 +7,32 @@ import App from "./App.jsx";
 const app = express();
 const PORT = 3000;
 
-app.get("/", (_req, res) => {
-  const name = "World";
-
+function home(name) {
   const component = ReactDOMServer.renderToString(<App name={name} />);
 
-  const html = `
+  return `
     <!DOCTYPE html>
     <html lang="en">
     <head>
-      <script>window.__INITIAL__DATA__ = ${JSON.stringify({ name })}</script>
+      <script>
+        window.__INITIAL__DATA__ = ${JSON.stringify({ name })}
+      </script>
     </head>
 
     <body>
-      <div id="root">${component}</div>
+      <div id="root">
+        ${component}
+      </div>
 
       <script src="/static/home.js"></script>
     </body>
   </html>
   `;
+}
 
+app.get("/", (_req, res) => {
+  const name = "World";
+  const html = home(name)
   res.send(html);
 });
 
