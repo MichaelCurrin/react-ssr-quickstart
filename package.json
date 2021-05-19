@@ -1,6 +1,6 @@
 {
   "name": "react-ssr-quickstart",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "scripts": {
     "start": "webpack && concurrently 'webpack --watch' 'nodemon dist'"
   },
