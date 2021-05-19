@@ -2,7 +2,7 @@
   "name": "react-ssr-quickstart",
   "version": "0.0.0",
   "scripts": {
-    "dev": "webpack && concurrently 'webpack --watch' 'nodemon dist'"
+    "start": "webpack && concurrently 'webpack --watch' 'nodemon dist'"
   },
   "dependencies": {
     "express": "4.17.1",
