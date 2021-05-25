@@ -8,6 +8,10 @@
 [![Package - react](https://img.shields.io/github/package-json/dependency-version/MichaelCurrin/react-ssr-quickstart/react?logo=react&logoColor=white)](https://www.npmjs.com/package/react)
 [![Package - express](https://img.shields.io/github/package-json/dependency-version/MichaelCurrin/react-ssr-quickstart/dev/express)](https://www.npmjs.com/package/express)
 
+The Server-Side Rendering may not be right for you. If you want to improve the performance of your app or improve SEO rankings, considering adding a pre-rendering tool at built time like [presite][], or use a static site generator that is built on React.
+
+[presite]: https://github.com/egoist/presite#examples
+
 
 ## Preview
 
@@ -26,20 +30,6 @@
 
 
 ## About
-
-### Why add Server-Side Rendering for a React app?
-
-With this flow, you are serving static content that doesn't need JS, then add JS to make the page interactive.
-
-Why?
-
-- Better performance for initial page load (for human users).
-- SEO crawlers can now see your app without having to run JS (JS is not supported by all bots and even Google's bot has a severe limitation for how many SPA pages it can crawle while HTML pages no issue).
-- The docs say that the SSR approach can also be used for rendering your React app as static pages (outputting as HTML files). Gatsby is an example of a static site generator built on React that had to turn browser-rendered app content into flat static HTML files.
-- It opens you up a to a server-side part to your app, where you serve templated files or API API requests to users based on the content in a database, maybe even giving edit access.
-    - In same way you might use PHP, Flask or Express to insert user profile info or gallery images from the DB into the HTML before returning to a user, or send an receive JSON data. 
-    - But, you might want to use a tool besides React or a tool that builds on React such as Next (allows hybrid of static, server and API) or Gatsby (static).
-- You get more control over a fast-reloading dev server that doesn't need an HTML page. This doesn't make sense though when the Creact React App flow for a SPA approach which let's you use the fast-reloading dev server but also do a build command to render static assets (which is slower but creates a better experience for a deployed prod site).
 
 ### Background
 
