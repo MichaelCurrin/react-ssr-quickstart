@@ -43,7 +43,7 @@ On initial page load without JS running, a user or a search engine crawler will 
 
 We do this by calling `ReactDOMServer.renderToString`, which unfortunately freezes the app so that ignores user interaction. This is solved by calling `React.hydrate` on the client, so that the browser can make the initial HTML and turn it into a dynamic app in the usual SPA style.
 
-The benefit is your page will load faster for users and the search engines will crawl and rank your site better. The downside is that this adds extra overheard to your app structure and also requires you to have a Node Express server running.While with the plain SPA flow, you build your static assets and host those somewhere like GitHub Pages without the need for Node.
+The benefit is your page will load faster for users and the search engines will crawl and rank your site better. The downside is that this adds extra overhead to your app structure and also requires you to have a Node Express server running. While with the plain SPA flow, you build your app to output as static assets and host those somewhere like GitHub Pages without the need for Node.
 
 ### Structure
 
