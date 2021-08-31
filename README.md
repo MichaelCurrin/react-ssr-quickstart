@@ -8,10 +8,6 @@
 [![Package - react](https://img.shields.io/github/package-json/dependency-version/MichaelCurrin/react-ssr-quickstart/react?logo=react&logoColor=white)](https://www.npmjs.com/package/react)
 [![Package - express](https://img.shields.io/github/package-json/dependency-version/MichaelCurrin/react-ssr-quickstart/dev/express)](https://www.npmjs.com/package/express)
 
-The Server-Side Rendering may not be right for you. If you want to improve the performance of your app or improve SEO rankings, considering adding a pre-rendering tool at built time like [presite][], or use a static site generator that is built on React.
-
-[presite]: https://github.com/egoist/presite#examples
-
 
 ## Preview
 
@@ -37,7 +33,14 @@ Learn more about React on [Dev Resources](https://michaelcurrin.github.io/dev-re
 
 ### Warning
 
-Note that Server-Side Rendering may **not** be right for you. If you want to improve the performance of your app or improve SEO rankings, considering adding a pre-rendering tool at built time like [presite][], or use a static site generator that is built on React.
+The Server-Side Rendering approach with a backend server may **not** be right for you. 
+
+It can be complex to manage, requires a backend server to be running like Node or Python, performance may be worse because of not using static assets, and if you have no database or similar data source then there is little benefit for having a server that dynamically renders data for each page request.
+
+So, if you want If you want to improve the performance of your app on initial page load or to improve your SEO rankings (with pre-rendered content friendly for crawlers), consider approaches which output a directory of static HTML that doesn't need JavaScript to run.
+
+- Add a pre-rendering tool at **build time**, like [presite][]. Then you can serve the static HTML output.
+- Use a static site generator that is built on React, such as Next.js or Gatsby. They can handle React syntax and they make Markdown content writing easy. Plus Next.js allows some hybrid approaches of server-side backend, SPA, and static content.
 
 [presite]: https://github.com/egoist/presite#examples
 
@@ -72,7 +75,7 @@ $ git clone git@github.com:MichaelCurrin/react-ssr-quickstart.git
 $ cd react-ssr-quickstart
 ```
 
-Install NPM packages:
+Install project packages:
 
 ```sh
 $ make install
@@ -91,7 +94,7 @@ That will:
 - Run the Webpack build task and then continue to build by watching for changes.
 - Run the Node app using `nodemon` and Express.
 
-The `make` command already allows parallel jobs with the `-j` flag as set in [Makefile](/Makefile), so that avoids having to depend on another package like `concurrently`.
+The `make` command already allows parallel jobs with the `-j` flag,  as set in [Makefile](/Makefile), so that avoids having to depend on another package like `concurrently`.
 
 Then open the browser at:
 
