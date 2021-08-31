@@ -6,8 +6,15 @@ import App from "./App.jsx";
 
 const PORT = 3000;
 
+/** Render an HTML page as a string. */
 function page(params) {
   const { username, title, description } = params;
+
+  const initialData = {
+    username,
+    title,
+    description,
+  };
 
   const component = ReactDOMServer.renderToString(
     <App username={username} title={title} description={description} />
@@ -33,31 +40,31 @@ function page(params) {
           -moz-osx-font-smoothing: grayscale;
 
           text-align: center;
-          /* Background color goes to page edge. */
+
+          /* Background color to go to page edge. */
           margin: 0;
         }
 
         body>* {
           /* Prevent content from going to the page edge - especially on mobile.
-              Note this should not be on body itself otherwise it gets white edges. */
+             Note this should not be on body itself, otherwise it gets white edges. */
           padding-left: 15px;
           padding-right: 15px;
         }
       </style>
 
       <script>
-        window.__INITIAL__DATA__ = ${JSON.stringify({
-          username,
-          title,
-          description,
-        })}
+        window.__INITIAL__DATA__ = ${JSON.stringify(initialData)};
       </script>
+
+      <script defer src="/static/main.js"></script>
     </head>
 
     <body>
-      <div id="root">${component}</div>
+      <div id="root">
+        ${component}
+      </div>
 
-      <script src="/static/main.js"></script>
     </body>
   </html>
   `;
@@ -77,6 +84,7 @@ app.get("/", (_req, res) => {
   res.send(html);
 });
 
-app.use("/static", express.static(path.resolve(__dirname, "public")));
+const publicDir = path.resolve(__dirname, "public");
+app.use("/static", express.static(publicDir));
 
 app.listen(PORT);
