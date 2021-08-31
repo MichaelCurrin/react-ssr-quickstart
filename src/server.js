@@ -4,8 +4,6 @@ import React from "react";
 import ReactDOMServer from "react-dom/server";
 import App from "./App.jsx";
 
-const app = express();
-
 const PORT = 3000;
 
 function page(params) {
@@ -64,6 +62,8 @@ function page(params) {
   </html>
   `;
 }
+
+const app = express();
 
 app.get("/", (_req, res) => {
   const params = {
