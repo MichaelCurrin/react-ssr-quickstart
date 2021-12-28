@@ -12,7 +12,9 @@ const PORT = 3000;
  * Don't add whitespace around component in the mountpoint, otherwise a warning
  * appears about a mismatch of content.
  */
-function page({ username, title, description }) {
+function page(initialData) {
+  const { username, title, description } = initialData;
+
   const component = ReactDOMServer.renderToString(
     <App username={username} title={title} description={description} />
   );
@@ -51,7 +53,7 @@ function page({ username, title, description }) {
       </style>
 
       <script>
-        window.__INITIAL__DATA__ = ${JSON.stringify({ username, title, description })};
+        window.__INITIAL__DATA__ = ${JSON.stringify(initialData)};
       </script>
 
       <script defer src="/static/main.js"></script>
