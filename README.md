@@ -104,16 +104,25 @@ Then open the browser at:
 
 Since this project uses Express and React on the _server_ side, in Production you'll have to a deploy a Node app.
 
-Build the static assets:
+Build the app:
 
 ```sh
-$ npm run build
+$ make build
 ```
 
-Start the server:
+See `dist/public` for static assets for the client, served as `/static/` URL path.
+
+Start the Node server:
 
 ```sh
 $ npm run dev
+```
+
+Which is roughly equivalent to this:
+
+```sh
+$ cd dist
+$ node index.js
 ```
 
 
