@@ -11,7 +11,7 @@ const PORT = 3000;
  *
  * Don't add whitespace around component in the mountpoint, otherwise a warning
  * appears about a mismatch of content.
-*/
+ */
 function page({ username, title, description }) {
   const initialData = {
     username,
