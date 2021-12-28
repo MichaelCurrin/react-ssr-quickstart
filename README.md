@@ -59,9 +59,9 @@ Note that there is no point in setting up a plain `.html` file here, since this 
 
 ### Requirements
 
-- Node
+- [Node](https://nodejs.org/)
 - Make
-    - A task runner than is standard on macOS and Linux but must be installed on Windows.
+    - A task runner than is standard on macOS and Linux but must be installed or left out on Windows.
     - See [Makefile](/Makefile) for commands you can run with `make COMMAND`.
 
 ### Installation
@@ -99,6 +99,22 @@ The `make` command already allows parallel jobs with the `-j` flag,  as set in [
 Then open the browser at:
 
 - http://localhost:3000
+
+### Deploy
+
+Since this project uses Express and React on the _server_ side, in Production you'll have to a deploy a Node app.
+
+Build the static assets:
+
+```sh
+$ npm run build
+```
+
+Start the server:
+
+```sh
+$ npm run dev
+```
 
 
 ## License
