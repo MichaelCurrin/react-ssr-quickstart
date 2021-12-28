@@ -7,9 +7,7 @@ import App from "./App.jsx";
 const PORT = 3000;
 
 /** Render an HTML page as a string. */
-function page(params) {
-  const { username, title, description } = params;
-
+function page({ username, title, description }) {
   const initialData = {
     username,
     title,
@@ -45,9 +43,9 @@ function page(params) {
           margin: 0;
         }
 
-        body>* {
+        body > * {
           /* Prevent content from going to the page edge - especially on mobile.
-             Note this should not be on body itself, otherwise it gets white edges. */
+            Note this should not be on body itself, otherwise it gets white edges. */
           padding-left: 15px;
           padding-right: 15px;
         }
