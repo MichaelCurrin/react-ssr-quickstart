@@ -73,14 +73,14 @@ function page({ username, title, description }) {
 const app = express();
 
 app.get("/", (_req, res) => {
-  const params = {
+  const initialData = {
     username: "developer",
     title: "React SSR Quickstart",
     description:
       "Starter template for server-side and client-side rendering of a React app",
   };
 
-  const html = page(params);
+  const html = page(initialData);
   res.send(html);
 });
 
