@@ -6,7 +6,12 @@ import App from "./App.jsx";
 
 const PORT = 3000;
 
-/** Render an HTML page as a string. */
+/**
+ * Render an HTML page as a string.
+ *
+ * Don't add whitespace around component in the mountpoint, otherwise a warning
+ * appears about a mismatch of content.
+*/
 function page({ username, title, description }) {
   const initialData = {
     username,
@@ -59,10 +64,7 @@ function page({ username, title, description }) {
     </head>
 
     <body>
-      <div id="root">
-        ${component}
-      </div>
-
+      <div id="root">${component}</div>
     </body>
   </html>
   `;
