@@ -2,9 +2,9 @@
   "name": "react-ssr-quickstart",
   "version": "0.3.0",
   "scripts": {
-    "dev": "nodemon dist",
+    "build": "webpack",
     "watch": "webpack --watch",
-    "build": "webpack"
+    "dev": "nodemon dist"
   },
   "dependencies": {
     "react": "^17.0.2",
