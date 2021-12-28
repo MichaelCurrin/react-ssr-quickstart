@@ -12,7 +12,7 @@
 ## Preview
 
 <div align="center">
-    <img src="/sample.png" alt="Sample screenshot" title="Sample screenshot" width="300" />
+    <img src="/sample.png" alt="Sample screenshot" width="300" />
 </div>
 
 
@@ -27,13 +27,13 @@
 
 ## About
 
-This app uses Server-Side Rendering. So a Node server running React renders HTML, which can be rendered even by a crawler, or a browser that has JS disabled. This initial app view is not interctive. Then the JS assets load later and the app becomes interacive.
+This app uses Server-Side Rendering. So a Node server running React renders HTML, which can be rendered even by a crawler, or a browser that has JS disabled. This initial app view is not interactive. Then the JS assets load later and the app becomes interactive.
 
 Learn more about React on [Dev Resources](https://michaelcurrin.github.io/dev-resources/resources/javascript/packages/react/). See specifically the SSR section.
 
 ### Warning
 
-The Server-Side Rendering approach with a backend server may **not** be right for you. 
+The Server-Side Rendering approach with a backend server may **not** be right for you.
 
 It can be complex to manage, requires a backend server to be running like Node or Python, performance may be worse because of not using static assets, and if you have no database or similar data source then there is little benefit for having a server that dynamically renders data for each page request.
 
