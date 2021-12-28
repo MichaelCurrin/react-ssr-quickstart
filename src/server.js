@@ -13,12 +13,6 @@ const PORT = 3000;
  * appears about a mismatch of content.
  */
 function page({ username, title, description }) {
-  const initialData = {
-    username,
-    title,
-    description,
-  };
-
   const component = ReactDOMServer.renderToString(
     <App username={username} title={title} description={description} />
   );
@@ -57,7 +51,7 @@ function page({ username, title, description }) {
       </style>
 
       <script>
-        window.__INITIAL__DATA__ = ${JSON.stringify(initialData)};
+        window.__INITIAL__DATA__ = ${JSON.stringify({ username, title, description })};
       </script>
 
       <script defer src="/static/main.js"></script>
